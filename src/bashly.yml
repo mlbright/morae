@@ -1,0 +1,52 @@
+name: morae
+help: Read remote packets into Wireshark
+version: 0.1.0
+
+# environment_variables:
+# - name: api_key
+#   help: Set your API key
+
+commands:
+- name: slurp
+  alias: s
+  help: Read remote packets into Wireshark
+
+  args:
+  - name: ipv4
+    required: true
+    help: IPV4 address to read from
+  # - name: target
+  #   help: "Target filename (default: same as source)"
+
+  flags:
+  - long: --user
+    short: -u
+    arg: user
+    default: ubuntu
+    help: Username to use for logging in
+
+  examples:
+  - morae slurp <ipv4>
+
+    # environment_variables:
+    # - name: default_target_location
+    #   help: Set the default location to download to
+
+# - name: upload
+#   alias: u
+#   help: Upload a file
+#   args:
+#   - name: source
+#     required: true
+#     help: File to upload
+# 
+#   flags:
+#   - long: --user
+#     short: -u
+#     arg: user
+#     help: Username to use for logging in
+#     required: true
+#   - long: --password
+#     short: -p
+#     arg: password
+#     help: Password to use for logging in
